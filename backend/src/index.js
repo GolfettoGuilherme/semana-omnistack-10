@@ -1,6 +1,7 @@
 //esse cara cuida das rotas da aplicacao
 const express = require("express");
 const mongoose = require("mongoose"); //banco de dados
+const cors = require("cors");
 const routes = require('./routes');
 
 const app = express();
@@ -11,6 +12,7 @@ mongoose.connect("mongodb+srv://omnistack:omnistack@cluster0-aslcz.mongodb.net/w
  useUnifiedTopology: true
 });
 
+app.use(cors()); // vai liberar o acesso externo para qualquer tipo de aplicacao
 //valido paratodas as request que vao receber json na request
 app.use(express.json());
 app.use(routes); //carregar as rotas feitas no outro arquivo

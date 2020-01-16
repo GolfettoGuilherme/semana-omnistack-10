@@ -1,0 +1,25 @@
+import React, { useState } from 'react';
+
+// Componente : Bloco isolado de HTML, CSS e JS o qual não interfe no restante da
+// Estado: informacoes mantidas pelo componente (lembrar do conceito de imutabilidade)
+// Propriedade : informacoes que um componente pai passa para o componente filho (parametros)
+
+// nao pode ter componente sob componente no nada, coloca esse <> no meio para funcionar
+
+function App() {
+  //counter, nome da var, setCounte funcao que vai atualizar essa var (na real ele vai criar um novo, mas ok)
+  const [counter, setCounter] = useState(0); //valor default 0
+
+  function incrementCounter(){
+    setCounter(counter + 1);
+  }
+
+  return (
+    <>
+      <h1>Contador: {counter}</h1>
+      <button onClick={incrementCounter}>Incrementar</button>
+    </>
+  );
+}
+
+export default App;
